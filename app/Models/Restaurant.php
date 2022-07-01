@@ -22,9 +22,4 @@ class Restaurant extends Model
     {
         static::creating(fn ($model) => $model->slug = Str::slug($model->name));
     }
-
-    public function owners()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 }
